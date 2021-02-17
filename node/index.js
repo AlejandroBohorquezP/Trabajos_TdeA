@@ -1,49 +1,72 @@
 
 
-const cursos = {
-    matematicas: {
-        default: 0,
-        id: 1,
-        nombre: 'Curso 1',
-        duracion: '3 semanas',
-        valor: 2000,
+const cursos = [
+    {   id: 1, 
+        nombre: 'Matematicas' ,
+        duracion: '12 semanas' ,
+        valor: '15 chelines' ,
     },
-    ingles: {
-        default: 0,
-        id: 1,
-        nombre: 'Curso 1',
-        duracion: '3 semanas',
-        valor: 2000,
+    {
+        id: 2,
+        nombre: 'Ingles' ,
+        duracion: '12 semanas' ,
+        valor: '13 chelines' ,
     },
-    espanol: {
-        default: 0,
-        id: 1,
-        nombre: 'Curso 1',
-        duracion: '3 semanas',
-        valor: 2000,
+    {
+        id: 3,
+        nombre: 'Español' ,
+        duracion: '12 semanas' ,
+        valor: '12 chelines' ,
     },
+];
+
+
+const argv = require('yargs')
+.command('cursos', 'Cursos: ', mostrarCursos())
+.argv;
+
+function mostrarCursos() {
+  
+//     let timer = 0;
+
+// cursos.forEach(el => {
+//     timer = timer+2000;
+//     setTimeout(() => {
+//         console.log(el);
+//     }, timer);
+   
+// });
+
+
+
+}
+
+
+console.log(argv.id);
+console.log(argv.nombre);
+console.log(argv.cedula);
+
+
+let curso = cursos.find(el => {return el.id === argv.id});
+
+if (!curso) {
+    console.log("No se encontro el curso!");
+} else {
+    curso.estudiante = {
+        nombre: argv.nombre,
+        cedula: argv.cedula
+    }
+    console.log(curso);
+
+    //Creacion del archivo
 }
 
 
 
 
-const argv = require('yargs')
-.command('promedio', 'Calcular el prom', cursos)
-.argv;
-
-console.log(argv.matematicas);
-console.log(argv);
 
 
 
-// let timer = 0;
-
-// courses.forEach(el => {
-//     timer = timer+2000;
-//     setTimeout(() => {
-//         console.log(el);
-//     }, timer);
-// });
 
 
 
