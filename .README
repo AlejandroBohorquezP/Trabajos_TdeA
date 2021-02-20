@@ -1,0 +1,3 @@
+#Los comandos son: para mostrar los cursos (node listar)
+                   para inscribir (node  node .\inscripcion.js inscribir -i -n -c )
+
